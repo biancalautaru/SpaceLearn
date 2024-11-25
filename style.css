@@ -1,0 +1,645 @@
+:root {
+	--color-light-blue: #f0fbff;
+	--color-dark-blue: #00004d;
+	--color-purple: #660066;
+	--color-light-purple: #f2e6ff;
+	--color-dark-purple: #330033;
+}
+
+@font-face {
+	font-family: Oxanium;
+	src: url(oxanium.ttf);
+}
+
+* {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	z-index: 0;
+	font-family: Oxanium;
+	color: var(--color-dark-blue);
+	scroll-padding-top: 5em;
+}
+
+* a {
+	text-decoration: none;
+	color: var(--color-dark-purple);
+}
+
+* a:hover {
+	opacity: 0.75;
+	color: var(--color-purple)
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	font-size: 1.5em;
+	background: var(--color-light-blue);
+	box-shadow: 0 7px 20px -20px #000000;
+}	
+
+header nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header nav ul {
+	display: flex;
+	gap: 2em;
+}
+
+#nav_left {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	padding: 0.4em;
+}
+
+#home_button img {
+	transition: transform 0.75s
+}
+
+#home_button img:hover {
+	transform: scale(1.25) rotate(360deg);
+}
+
+header nav ul li {
+	list-style: none;
+}
+
+.dropdown_content {
+	display: none;
+	position: absolute;
+	background: var(--color-light-blue);
+	padding: 0.5em;
+	border-radius: 1em;
+	border: solid 0.05em var(--color-dark-blue);
+	box-shadow: 0.2em 0.2em 0 var(--color-dark-blue);
+}
+
+.dropdown_content a {
+	display: block;
+	padding: 0.2em;
+	font-size: 1.2vw;
+}
+
+.dropdown:hover .dropdown_content {
+	display: block;
+}
+
+#language_selector {
+	padding: 0.4em;
+}
+
+main {
+	display: flex;
+	padding: 1em;
+	background: var(--color-light-blue);
+}
+
+button {
+	display: none;
+}
+
+.menu {
+	align-self: flex-start;
+	top: 6em;
+	position: sticky;
+	width: 15%;
+	max-height: 80vh;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	padding-right: 1em;
+	margin: 1em;
+	margin-left: 0;
+}
+
+.menu ul {
+	list-style: none;
+}
+
+.menu h1, aside h1 {
+	padding: 0.3em;
+	font-size: 2vw;
+	text-align: center;
+}
+
+.menu h2, .menu h3, .menu li, aside li {
+	padding: 0.3em;
+	font-size: 1.1vw;
+}
+
+.menu h3 {
+	padding-left: 0;
+}
+
+.submenu_1, .submenu_2 {
+	padding-left: 1em;
+}
+
+.menu, main article, main section, aside {
+	padding: 1em;
+	border-radius: 2em;
+	border: solid 0.05em var(--color-dark-purple);
+	background: var(--color-light-purple);
+	box-shadow: 0.5em 0.5em 0 var(--color-dark-purple);
+}
+
+.menu li {
+	padding: 0.2em;
+}
+
+main > article {
+	width: 65%;
+}
+
+main article, main section, aside {
+	margin: 1em;
+}
+
+article h1, article h2, section h3, section h4 {
+	padding: 0.3em;
+	text-align: center;
+}
+
+article h1 {
+	font-size: 4vw;
+	animation-name: title_animation;
+	animation-duration: 20s;
+}
+
+@keyframes title_animation {
+	0% {
+		transform: scale(1);
+		color: var(--color-dark-blue);
+	}
+	25% {
+		transform: scale(1.05);
+		color: var(--color-dark-purple);
+		letter-spacing: 1px;
+	}
+	50% {
+		transform: scale(1.1);
+		color: var(--color-purple);
+		letter-spacing: 2px;
+		text-shadow: 1px 1px 5px var(--color-dark-purple);
+	}
+	75% {
+		transform: scale(1.05);
+		color: var(--color-dark-purple);
+		letter-spacing: 1px;
+	}
+	100% {
+		transform: scale(1);
+		color: var(--color-dark-blue);
+	}
+}
+
+article h2 {
+	font-size: 3vw;
+}
+
+section h3 {
+	font-size: 2vw;
+}
+
+section h4 {
+	font-size: 1.5vw;
+}
+
+main p, section li {
+	padding: 0.4em;
+	text-align: justify;
+	font-size: 1.3vw;
+}
+
+section li {
+	margin-left: 1.4em;
+}
+
+main figure {
+	width: 40%;
+	padding-top: 1em;
+}
+
+.fig_left {
+	float: left;
+	padding-left: 1em;
+	padding-right: 1.5em;
+}
+
+.fig_middle {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fig_right {
+	float: right;
+	padding-left: 1.5em;
+	padding-right: 1em;
+}
+
+main figure img {
+	width: 100%;
+	border-radius: 2em;
+	border: solid 0.05em var(--color-dark-blue);
+	box-shadow: 0.5em 0.5em 0 var(--color-dark-blue);
+}
+
+main figcaption {
+	padding-top: 0.8em;
+	font-size: 1vw;
+	text-align: center;
+}
+
+table {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td {
+	padding: 0.5em;
+	border-collapse: collapse;
+	border-radius: 0.8em;
+	border: solid 0.05em var(--color-dark-blue);
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 1.3vw;
+}
+
+tr:nth-of-type(2) > td:first-of-type {
+	color: #28c7b4;
+}
+
+tr:nth-of-type(3) > td:first-of-type {
+	color: #928bff;
+}
+
+tr:nth-of-type(4) > td:first-of-type {
+	color: #07c459;
+}
+
+tr:nth-of-type(5) > td:first-of-type {
+	color: #ff6c6c;
+}
+
+tr:nth-of-type(6) {
+	font-style: italic;
+}
+
+tr:nth-of-type(7) > td:first-of-type {
+	color: #ff9b00;
+}
+
+.sun {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 50%;
+}
+
+#int_planets, #ext_planets {
+	display: flex;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: space-between;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 80%;
+}
+
+#int_planets .planet:nth-of-type(1) {
+	max-width: 11%;
+}
+
+#int_planets .planet:nth-of-type(2) {
+	max-width: 26%;
+}
+
+#int_planets .planet:nth-of-type(3) {
+	max-width: 28%;
+}
+
+#int_planets .planet:nth-of-type(4) {
+	max-width: 15%;
+}
+
+#ext_planets .planet:nth-of-type(1) {
+	width: 22%;
+}
+
+#ext_planets .planet:nth-of-type(2) {
+	width: 41%;
+}
+
+#ext_planets .planet:nth-of-type(3) {
+	width: 9%;
+}
+
+#ext_planets .planet:nth-of-type(4) {
+	width: 8%;
+}
+
+.sun, .planet {
+	border-radius: 50%;
+	transition: transform 1.5s ease, filter 5s;
+}
+
+.sun:hover, .planet:hover {
+	transform: scale(1.2);
+	filter: drop-shadow(0 0 40px #003366);
+	cursor: pointer;
+}
+
+.planet_icon {
+	 width: 2.8vw;
+	 display: inline;
+	 position:absolute;
+	 float: left;
+	 padding-left: 0.5em;
+}
+
+#saturn .planet_icon {
+	width: 7vw;
+}
+
+aside {
+	align-self: flex-start;
+	top: 6em;
+	position: sticky;
+	width: 20%;
+	max-height: 80vh;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	padding-left: 1em;
+	padding-right: 1em;
+	text-align: left;
+}
+
+aside div {
+	display: block;
+	padding: 0.3em;
+}
+
+dl > div:nth-of-type(odd) {
+	color: var(--color-purple)
+}
+
+dt, dd {
+	display: inline;
+	font-size: 1.1vw;
+}
+
+dt, dt b, dt i, dd, dd i, dd sup {
+	color: inherit;
+}
+
+dd::before {
+	content: "– ";
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--color-light-blue);
+	box-shadow: 0 -7px 20px -20px #000000;
+}
+
+footer section {
+	flex: 1;
+	padding: 2em;
+}
+
+footer h2 {
+	font-size: 1.8vw;
+}
+
+footer figcaption, footer label, footer p {
+	font-size: 1.3vw;
+}
+
+#quote figcaption {
+	padding-top: 0.3em;
+}
+
+#feedback label {
+	display: inline-block;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+
+input, textarea {
+	padding: 0.5em;
+	border: 0.1rem solid var(--color-dark-blue);
+	border-radius: 0.3em;
+	font-size: 0.8rem;
+	background: var(--color-light-blue);
+	color: var(--color-dark-purple);
+}
+
+#name {
+	width: 12vw;
+}
+
+#text {
+	width: 20vw;
+	height: 5vw;
+}
+
+#submit {
+	width: 4vw;
+	height: 1.5vw;
+	font-size: 1vw;
+	padding: 0.1em;
+	margin-top: 0.3em;
+	font-weight: bold;
+}
+
+#submit:hover {
+	cursor: pointer;
+	color: var(--color-purple);
+}
+
+#social p, #social ul li {
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+
+#social ul li {
+	list-style: none;
+}
+
+#social img {
+	vertical-align: middle;
+}
+
+#social figcaption {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 1023px) {
+	header {
+		font-size: 1.2em;
+	}
+
+	.dropdown_content a {
+		font-size: 1.5vw;
+	}
+
+	.menu li, main p, section li, th, td, aside dt, aside dd {
+		font-size: 1.2vw;
+	}
+
+	.menu h1, .menu h2, .menu h3 {
+		font-size: 1.4vw;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	header nav {
+		justify-content: center;
+	}
+
+	header nav ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		text-align: center;
+		row-gap: 0.5em;
+		column-gap: 1em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+
+	.dropdown_content {
+		top: 70px;
+		font-size: 3vw;
+	}
+
+	.dropdown_content a {
+		font-size: 2.2vw;
+	}
+
+	main {
+		flex-direction: column;
+	}
+
+	button {
+		display: block;
+		width: 20%;
+		height: 20px;
+		margin-left: 1.5em;
+		background: var(--color-light-blue);
+		border-radius: 2em;
+		border: solid 0.05em var(--color-dark-blue);
+		box-shadow: 0.5em 0.5em 0 var(--color-dark-blue);
+		font-size: 2vw;
+	}
+
+	.menu {
+		display: none;
+		position: static;
+		width: 85%;
+		margin: 0;
+		margin-left: 1em;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	button:hover ~ .menu {
+		display: block;
+	}
+
+	.menu:hover {
+		display: block;
+	}
+
+	.menu ul {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.menu li, main p, section li, th, td, aside dt, aside dd {
+		font-size: 2vw;
+	}
+
+	.menu h1, .menu h2, .menu h3 {
+		font-size: 2.7vw;
+	}
+
+	.menu a {
+		font-size: 2vw;
+	}
+
+	.submenu_1, .submenu_2 {
+		flex-direction: column;
+	}
+
+	main > article {
+		width: 85%;
+	}
+
+	main figcaption {
+		font-size: 1.5vw;
+	}
+
+	aside {
+		position: static;
+		height: 20vh;
+		width: 85%;
+		margin: 1em;
+	}
+
+	aside h1 {
+		font-size: 2.5vw;
+	}
+
+	aside li {
+		font-size: 2vw;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	footer h2 {
+		font-size: 4vw;
+	}
+
+	footer figcaption, footer label, footer p {
+		font-size: 3vw;
+	}
+
+	#name {
+		width: 40vw;
+	}
+
+	#text {
+		width: 60vw;
+		height: 15vw;
+	}
+
+	#submit {
+		width: 12vw;
+		height: 6vw;
+		font-size: 2vw;
+	}
+}
