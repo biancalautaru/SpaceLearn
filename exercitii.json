@@ -1,0 +1,58 @@
+[
+    {
+        "type": "multiple choice",
+        "question": "Aproximativ câte stele sunt în galaxia Calea Lactee?",
+        "answer1": "100 de milioane",
+        "answer2": "50 de milioane",
+        "answer3": "100 de miliarde",
+        "answer4": "10 miliarde",
+        "correct": "3"
+    },
+    {
+        "type": "free response",
+        "question": "Câte brațe are galaxia Calea Lactee?",
+        "correct": "4"
+    },
+    {
+        "type": "free response",
+        "question": "Care este cea mai luminoasă stea de pe cer?",
+        "correct": "Sirius"
+    },
+    {
+        "type": "multiple choice",
+        "question": "În ce constelație este Steaua Polară?",
+        "answer1": "Carul Mare",
+        "answer2": "Carul Mic",
+        "answer3": "Hercule",
+        "answer4": "Cassiopeia",
+        "correct": "2"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Care este ordinea corectă a planetelor în sistemul nostru solar?",
+        "answer1": "Venus, Mercur, Pământ, Marte, Jupiter, Neptun, Saturn, Uranus",
+        "answer2": "Mercur, Venus, Pământ, Marte, Saturn, Jupiter, Neptun, Uranus",
+        "answer3": "Pământ, Jupiter, Mercur, Marte, Saturn, Venus, Neptun, Uranus",
+        "answer4": "Mercur, Venus, Pământ, Marte, Jupiter, Saturn, Uranus, Neptun",
+        "correct": "4"
+    },
+    {
+        "type": "free response",
+        "question": "Care planetă din sistemul solar mai este cunoscută și ca „Luceafărul”?",
+        "correct": "Venus"
+    },
+    {
+        "type": "free response",
+        "question": "Pe ce planetă se află furtuna numită Marea Pată Roșie?",
+        "correct": "Jupiter"
+    },
+    {
+        "type": "multiple choice",
+        "question": "În câte minute ajunge lumina Soarelui pe Pământ?",
+        "answer1": "8 minute",
+        "answer2": "3 minute",
+        "answer3": "56 de minute",
+        "answer4": "20 de minute",
+        "correct": "1"
+    }
+]
