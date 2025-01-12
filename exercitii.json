@@ -6,7 +6,7 @@
         "answer2": "50 de milioane",
         "answer3": "100 de miliarde",
         "answer4": "10 miliarde",
-        "correct": "3"
+        "correct": "100 de miliarde"
     },
     {
         "type": "free response",
@@ -25,7 +25,7 @@
         "answer2": "Carul Mic",
         "answer3": "Hercule",
         "answer4": "Cassiopeia",
-        "correct": "2"
+        "correct": "Carul Mic"
     },
     {
         "type": "multiple choice",
@@ -34,7 +34,7 @@
         "answer2": "Mercur, Venus, Pământ, Marte, Saturn, Jupiter, Neptun, Uranus",
         "answer3": "Pământ, Jupiter, Mercur, Marte, Saturn, Venus, Neptun, Uranus",
         "answer4": "Mercur, Venus, Pământ, Marte, Jupiter, Saturn, Uranus, Neptun",
-        "correct": "4"
+        "correct": "Mercur, Venus, Pământ, Marte, Jupiter, Saturn, Uranus, Neptun"
     },
     {
         "type": "free response",
@@ -53,6 +53,125 @@
         "answer2": "3 minute",
         "answer3": "56 de minute",
         "answer4": "20 de minute",
-        "correct": "1"
+        "correct": "8 minute"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Cine a descoperit legile mișcării planetelor?",
+        "answer1": "Isaac Newton",
+        "answer2": "Galileo Galilei",
+        "answer3": "Nicolaus Copernic",
+        "answer4": "Johannes Kepler",
+        "correct": "Johannes Kepler"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Care este denumirea navei spațiale pe care a fost Laika, prima creatură vie trimisă în spațiu?",
+        "answer1": "Sputnik 2",
+        "answer2": "Vostok 1",
+        "answer3": "Sputnik 3",
+        "answer4": "Apollo 11",
+        "correct": "Sputnik 2"
+    },
+    {
+        "type": "free response",
+        "question": "În ce an a adoptat Uniunea Astronomică Internațională categoria planetelor pitice?",
+        "correct": "2006"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Axa de rotație a cărei planete este înclinată lateral, aproape în planul orbitei sale solare?",
+        "answer1": "Venus",
+        "answer2": "Jupiter",
+        "answer3": "Uranus",
+        "answer4": "Saturn",
+        "correct": "Uranus"
+    },
+    {
+        "type": "free response",
+        "question": "Care este denumirea unui spațiu în care nu există aer, gaze sau altă materie?",
+        "correct": "vid"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Care astronom a formulat teoria modernă a Big Bang-ului?",
+        "answer1": "Carl Sagan",
+        "answer2": "Edwin Hubble",
+        "answer3": "William Herschel",
+        "answer4": "Georges Lemaître",
+        "correct": "Georges Lemaître"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Odată la câți ani este vizibilă de pe Pământ cometa Halley?",
+        "answer1": "25",
+        "answer2": "100",
+        "answer3": "75",
+        "answer4": "30",
+        "correct": "75"
+    },
+    {
+        "type": "free response",
+        "question": "Care stea este cea mai apropiată de sistemul nostru solar?",
+        "correct": "Alpha Centauri"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Care este cel mai mare asteroid cunoscut din sistemul solar, denumit după zeița romană a agriculturii?",
+        "answer1": "Ceres",
+        "answer2": "Vesta",
+        "answer3": "Diomede",
+        "answer4": "Diana",
+        "correct": "Ceres"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Cât se estimează că va mai trăi Soarele?",
+        "answer1": "15 miliarde de ani",
+        "answer2": "2 milioane de ani",
+        "answer3": "5 miliarde de ani",
+        "answer4": "7 milioane de ani",
+        "correct": "5 miliarde de ani"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Ce se măsoară în ani-lumină?",
+        "answer1": "accelerația",
+        "answer2": "magnitudinea",
+        "answer3": "masa",
+        "answer4": "distanța",
+        "correct": "distanța"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Care este singura planetă dintre cele patru planete terestre care are un câmp magnetic puternic?",
+        "answer1": "Mercur",
+        "answer2": "Venus",
+        "answer3": "Pământ",
+        "answer4": "Marte",
+        "correct": "Pământ"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Ce se află în centrul galaxiei Căii Lactee?",
+        "answer1": "o supernovă",
+        "answer2": "o gaură neagră",
+        "answer3": "un roi stelar",
+        "answer4": "brațe spiralate",
+        "correct": "o gaură neagră"
+    },
+    {
+        "type": "free response",
+        "question": "În ce an a ajuns primul om în spațiu, numit Yuri Gagarin?",
+        "correct": "1961"
+    },
+    {
+        "type": "multiple choice",
+        "question": "Ce reacție în care sunt implicate nucleele atomice este sursa energiei Soarelui?",
+        "answer1": "fisiune nucleară",
+        "answer2": "ionizare",
+        "answer3": "combustie",
+        "answer4": "fuziune nucleară",
+        "correct": "fuziune nucleară"
     }
 ]

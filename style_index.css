@@ -266,7 +266,7 @@ footer figcaption, footer label, footer p {
 	padding-bottom: 0.3em;
 }
 
-input, textarea {
+footer input, textarea {
 	padding: 0.5em;
 	border: 0.1rem solid var(--color-dark-blue);
 	border-radius: 0.3em;

@@ -112,7 +112,7 @@ main {
 
 #exercises_menu {
 	display: grid;
-	grid-template-columns: repeat(auto, 1fr);
+	grid-template-columns: 1fr;
 	top: 6em;
 	position: sticky;
 	gap: 1em;
@@ -141,6 +141,7 @@ main {
 #exercises_menu h1 {
 	font-size: 1.4vw;
 	text-align: center;
+	cursor: pointer;
 }
 
 #exercise_tab h1 {
@@ -151,6 +152,68 @@ main {
 #exercise_tab p {
 	padding: 1.2em;
 	font-size: 1.5vw;
+}
+
+#exercise_tab form div {
+	padding: 0.5em;
+	padding-left: 1em;
+	font-size: 1.5vw;
+}
+
+#exercise_tab label {
+	cursor: pointer;
+}
+
+#exercise_tab input[type="text"] {
+	margin: 0.2em;
+	padding: 0.3em;
+	font-size: 1.3vw;
+}
+
+#exercise_tab input[type = "radio"] {
+	display: inline-block;
+	margin-left: 0.3em;
+	margin-right: 0.5em;
+	cursor: pointer;
+}
+
+#exercise_tab img {
+	display: inline;
+	width: 1.5rem;
+	margin-left: 1rem;
+	vertical-align: middle;
+}
+
+#title {
+	font-size: 4vw !important;
+	text-align: center;
+}
+
+#previous, #next, #exercise_tab input[type = "submit"] {
+	cursor: pointer;
+	padding: 0.5em;
+	margin: 0.2em;
+	font-size: 1.2vw;
+}
+
+#previous {
+	margin-left: 1.2em;
+}
+
+#previous, #next {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#exercise_tab input[type = "submit"] {
+	margin-top: 1em;
+}
+
+#previous, #next, #exercise_tab input[type = "submit"], #exercise_tab input[type="text"] {
+	background-color: var(--color-light-blue);
+	color: var(--color-dark-purple);
+	border: 0.1rem solid rgba(102, 0, 102, 0.6);
+	border-radius: 1em;
 }
 
 footer {
@@ -179,12 +242,13 @@ footer figcaption, footer label, footer p {
 }
 
 #feedback label {
+	cursor: text;
 	display: inline-block;
 	padding-top: 0.3em;
 	padding-bottom: 0.3em;
 }
 
-input, textarea {
+footer input, textarea {
 	padding: 0.5em;
 	border: 0.1rem solid var(--color-dark-blue);
 	border-radius: 0.3em;
@@ -283,6 +347,18 @@ input, textarea {
 
 	#exercise_tab p {
 		font-size: 2.5vw;
+	}
+
+	#exercise_tab form div {
+		font-size: 2.5vw;
+	}
+
+	#exercise_tab input[type="text"] {
+		font-size: 2.3vw;
+	}
+
+	#previous, #next, #exercise_tab input[type = "submit"] {
+		font-size: 2vw;
 	}
 
 	footer {
