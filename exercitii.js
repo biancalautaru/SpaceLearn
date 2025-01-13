@@ -3,7 +3,7 @@ window.onload = function() {
         const exercisesMenu = document.getElementById("exercises_menu");
 
         for (let i = 0; i < exercises.length; i++) {
-            var exercisesItem = document.createElement("div");
+            const exercisesItem = document.createElement("div");
 
             const number = document.createElement("h1");
 
@@ -13,7 +13,7 @@ window.onload = function() {
                 else
                     number.innerHTML = `Exercițiul ${i+1}`;
             }
-            var width = window.matchMedia("(max-width:767px)");
+            const width = window.matchMedia("(max-width:767px)");
             changeNumber(width);
             width.addEventListener("change", function() {
                 changeNumber(width);
@@ -29,6 +29,15 @@ window.onload = function() {
         }
 
         function showExercise(exerciseNumber) {
+            const root = document.documentElement;
+            const colorDarkBlue = getComputedStyle(root).getPropertyValue("--color-dark-blue");
+            const colorPurple = getComputedStyle(root).getPropertyValue("--color-purple");
+            
+            const exercisesList = exercisesMenu.getElementsByTagName("div");
+            for (let i = 0; i < exercisesList.length; i++)
+                    exercisesList[i].style.color = colorDarkBlue;
+            exercisesList[exerciseNumber].style.color = colorPurple;
+
             const exerciseTab = document.getElementById("exercise_tab");
             exerciseTab.innerHTML = ``;
     

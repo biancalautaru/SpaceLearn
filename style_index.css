@@ -17,7 +17,7 @@
 	margin: 0;
 	z-index: 0;
 	font-family: Oxanium;
-	color: #00004d;
+	color: var(--color-dark-blue);
 }
 
 * a {
