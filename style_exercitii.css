@@ -90,10 +90,6 @@ header nav ul li {
 	display: block;
 }
 
-#language_selector {
-	padding: 0.4em;
-}
-
 main {
 	background: var(--color-light-blue);
 }
@@ -125,7 +121,13 @@ main {
     background: var(--color-light-purple);
     box-shadow: 0.5em 0.5em 0 var(--color-dark-purple);
 }
-  
+
+#exercises_menu h1 {
+	font-size: 1.4vw;
+	text-align: center;
+	cursor: pointer;
+}
+
 #exercise_tab {
 	flex: 1;
 	position: sticky;
@@ -137,10 +139,33 @@ main {
     box-shadow: 0.5em 0.5em 0 var(--color-dark-purple);
 }
 
-#exercises_menu h1 {
-	font-size: 1.4vw;
+#welcome {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+	align-items: center;
+	align-content: center;
 	text-align: center;
-	cursor: pointer;
+}
+
+#title {
+	font-size: 4vw !important;
+}
+
+#welcome form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+	align-items: center;
+	font-size: 1.5em;
+}
+
+#welcome form label {
+	cursor: text;
+}
+
+#welcome form input[type="submit"] {
+	margin: 0;
 }
 
 #exercise_tab h1 {
@@ -157,10 +182,6 @@ main {
 	padding: 0.5em;
 	padding-left: 1em;
 	font-size: 1.5vw;
-}
-
-#exercise_tab label {
-	cursor: pointer;
 }
 
 #exercise_tab input[type="text"] {
@@ -181,11 +202,6 @@ main {
 	width: 1.5rem;
 	margin-left: 1rem;
 	vertical-align: middle;
-}
-
-#title {
-	font-size: 4vw !important;
-	text-align: center;
 }
 
 #previous, #next, #exercise_tab input[type = "submit"] {
@@ -242,13 +258,15 @@ footer figcaption, footer label, footer p {
 
 #feedback label {
 	cursor: text;
-	display: inline-block;
 	padding-top: 0.3em;
 	padding-bottom: 0.3em;
 }
 
 footer input, textarea {
+	display: block;
 	padding: 0.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	border: 0.1rem solid var(--color-dark-blue);
 	border-radius: 0.3em;
 	font-size: 0.8rem;
@@ -266,6 +284,7 @@ footer input, textarea {
 }
 
 #submit {
+	display: inline;
 	width: 4vw;
 	height: 1.5vw;
 	font-size: 1vw;
@@ -305,6 +324,10 @@ footer input, textarea {
 	.dropdown_content a {
 		font-size: 1.5vw;
 	}
+
+	#submit {
+		font-size: 0.9vw;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -330,6 +353,14 @@ footer input, textarea {
 
 	.dropdown_content a {
 		font-size: 2.2vw;
+	}
+
+	#title {
+		font-size: 7vw !important;
+	}
+
+	#welcome form {
+		font-size: 2.5vw;
 	}
 
 	#exercises_menu {
@@ -387,6 +418,6 @@ footer input, textarea {
 	#submit {
 		width: 12vw;
 		height: 6vw;
-		font-size: 2vw;
+		font-size: 2.5vw;
 	}
 }

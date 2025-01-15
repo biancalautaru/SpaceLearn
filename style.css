@@ -92,10 +92,6 @@ header nav ul li {
 	display: block;
 }
 
-#language_selector {
-	padding: 0.4em;
-}
-
 main {
 	display: flex;
 	padding: 1em;
@@ -435,13 +431,16 @@ footer figcaption, footer label, footer p {
 }
 
 #feedback label {
-	display: inline-block;
+	cursor: text;
 	padding-top: 0.3em;
 	padding-bottom: 0.3em;
 }
 
 footer input, textarea {
+	display: block;
 	padding: 0.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	border: 0.1rem solid var(--color-dark-blue);
 	border-radius: 0.3em;
 	font-size: 0.8rem;
@@ -459,6 +458,7 @@ footer input, textarea {
 }
 
 #submit {
+	display: inline;
 	width: 4vw;
 	height: 1.5vw;
 	font-size: 1vw;
@@ -505,6 +505,10 @@ footer input, textarea {
 
 	.menu h1, .menu h2, .menu h3 {
 		font-size: 1.4vw;
+	}
+
+	#submit {
+		font-size: 0.9vw;
 	}
 }
 
@@ -640,6 +644,6 @@ footer input, textarea {
 	#submit {
 		width: 12vw;
 		height: 6vw;
-		font-size: 2vw;
+		font-size: 2.5vw;
 	}
 }
