@@ -208,9 +208,12 @@ window.onload = function() {
                         img.src = "images/tick.png";
                         img.alt = "Corect";
                         img.id = "icon";
-                        let total = parseInt(localStorage.getItem("total"));
-                        total += 1;
-                        localStorage.setItem("total", total);
+
+                        let correctAnswers = JSON.parse(localStorage.getItem("correctAnswers"));
+                        if (!correctAnswers)
+                            correctAnswers = new Array();
+                        correctAnswers.push(exerciseNumber);
+                        localStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
                     }
                     else {
                         img.src = "images/x.png";
@@ -223,15 +226,15 @@ window.onload = function() {
                 exerciseTab.appendChild(form);
             }
 
-            function aliasFormCheck() {
-                aliasForm = document.querySelector("#welcome form");
-                if (aliasForm) {
-                    aliasForm.addEventListener("submit", function(event) {
+            function signupFormCheck() {
+                const signupForm = document.getElementsByClassName("welcome_form")[0];
+                if (signupForm) {
+                    signupForm.addEventListener("submit", function(event) {
                         event.preventDefault();
-                        var alias = document.getElementById("alias_input").value;
-                        const aliasRegex = /^[a-z]{3,}\d{2}$/;
-                        if (!aliasRegex.test(alias)) {
-                            alert("Introdu un alias corect!");
+                        const username = document.getElementById("username_signup").value;
+                        const usernameRegex = /^[a-z]{3,}\d{2}$/;
+                        if (!usernameRegex.test(username)) {
+                            alert("Introdu un username ce respectă regulile!");
                             return false;
                         }
                         showExercise(0);
@@ -239,15 +242,37 @@ window.onload = function() {
                 }
             }
 
-            aliasFormCheck();
+            function loginFormCheck() {
+                const loginForm = document.getElementsByClassName("welcome_form")[1];
+                if (loginForm) {
+                    loginForm.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        const username = document.getElementById("username_login").value;
+                        const password = document.getElementById("password_login").value;
+
+                        fetch("users.json").then(response => response.json()).then(users => {
+                            users.forEach(function(user) {
+                                if(user.username === username && user.password != password) {
+                                    alert("Username-ul sau parola sunt greșite!");
+                                    return false;
+                                }
+                            });
+                        });
+                        showExercise(0);
+                    });
+                }
+            }
+
+            signupFormCheck();
+            loginFormCheck();
         });
     }
 
     showTime();
     feedbackForm();
 
-    if (window.location.pathname == "/exercitii.html") {
-        localStorage.setItem("total", 0);
+    if (window.location.pathname == "/exercitii.html")
         Exercises();
-    }
+    
+    // localStorage.removeItem("correctAnswers");
 }
