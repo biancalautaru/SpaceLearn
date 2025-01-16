@@ -134,6 +134,42 @@ window.onload = function() {
                     exerciseTab.appendChild(nextButton);
                 }
 
+                const username = localStorage.getItem("username");
+                if (username) {
+                    const logOutButton = document.createElement("button");
+                    logOutButton.id = "logout";
+                    logOutButton.textContent = "Log Out";
+                    logOutButton.style.display = "inline";
+                    logOutButton.style.float = "right";
+                    logOutButton.style.marginTop = "1em";
+
+                    logOutButton.addEventListener("click", function() {
+                        localStorage.removeItem("username");
+                        location.reload();
+                    });
+
+                    exerciseTab.appendChild(logOutButton);
+
+                    const userScore = document.createElement("p");
+                    userScore.id = "user_score";
+                    userScore.style.display = "inline";
+                    userScore.style.float = "right";
+
+                    userScore.textContent = username.replace(/"/g, "") + ": " + getScore(username) + "/" + exercises.length;
+                    exerciseTab.appendChild(userScore);
+
+                    const correctAnswers = localStorage.getItem(username.replace(/"/g, "") + "correctAnswers");
+                }
+                else {
+                    const userScore = document.createElement("p");
+                    userScore.id = "user_score";
+                    userScore.style.display = "inline";
+                    userScore.style.float = "right";
+
+                    userScore.textContent = getScore(username) + "/" + exercises.length;
+                    exerciseTab.appendChild(userScore);
+                }
+
                 const number = document.createElement("h1");
                 number.innerHTML = `<i>Exercițiul ${exerciseNumber + 1}</i>`;
                 exerciseTab.appendChild(number);
@@ -209,11 +245,33 @@ window.onload = function() {
                         img.alt = "Corect";
                         img.id = "icon";
 
-                        let correctAnswers = JSON.parse(localStorage.getItem("correctAnswers"));
-                        if (!correctAnswers)
-                            correctAnswers = new Array();
-                        correctAnswers.push(exerciseNumber);
-                        localStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
+                        let username = localStorage.getItem("username");
+                        if (username) {
+                            username = username.replace(/"/g, "");
+                            let correctAnswers = JSON.parse(localStorage.getItem(username + "correctAnswers"));
+                            if (!correctAnswers)
+                                correctAnswers = new Array();
+                            if (!correctAnswers.includes(exerciseNumber))
+                                correctAnswers.push(exerciseNumber);
+
+                            localStorage.setItem(username + "correctAnswers", JSON.stringify(correctAnswers));
+
+                            const userScore = document.getElementById("user_score");
+                            userScore.textContent = username + ": " + getScore(username) + "/" + exercises.length;
+                        }
+                        else {
+                            let correctAnswers = JSON.parse(sessionStorage.getItem("correctAnswers"));
+                            if (!correctAnswers)
+                                correctAnswers = new Array();
+                            if (!correctAnswers.includes(exerciseNumber))
+                                correctAnswers.push(exerciseNumber);
+                            
+                            sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
+
+                            const userScore = document.getElementById("user_score");
+                            userScore.textContent = getScore(username) + "/" + exercises.length;
+                        }
+
                     }
                     else {
                         img.src = "images/x.png";
@@ -237,7 +295,8 @@ window.onload = function() {
                             alert("Introdu un username ce respectă regulile!");
                             return false;
                         }
-                        showExercise(0);
+                        alert("Contul a fost creat cu succes!");
+                        location.reload();
                     });
                 }
             }
@@ -258,9 +317,24 @@ window.onload = function() {
                                 }
                             });
                         });
+                        localStorage.setItem("username", JSON.stringify(username));
+                        sessionStorage.removeItem("correctAnswers");
                         showExercise(0);
                     });
                 }
+            }
+
+            function getScore(username) {
+                let correctAnswers = null;
+                if (username)
+                    correctAnswers = JSON.parse(localStorage.getItem(username.replace(/"/g, "") + "correctAnswers"));
+                else
+                    correctAnswers = JSON.parse(sessionStorage.getItem("correctAnswers"));
+
+                let score = 0;
+                if (correctAnswers)
+                    score = correctAnswers.length;
+                return score;
             }
 
             signupFormCheck();
@@ -273,6 +347,4 @@ window.onload = function() {
 
     if (window.location.pathname == "/exercitii.html")
         Exercises();
-    
-    // localStorage.removeItem("correctAnswers");
 }

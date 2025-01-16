@@ -195,7 +195,7 @@ main {
 	font-size: 1.3vw;
 }
 
-.welcome_form  input[type="submit"] {
+.welcome_form  input[type="submit"], #logout {
 	margin: 0;
 }
 
@@ -239,7 +239,7 @@ main {
 	vertical-align: middle;
 }
 
-#previous, #next, #exercise_tab input[type = "submit"] {
+#previous, #next, #exercise_tab input[type = "submit"], #logout {
 	cursor: pointer;
 	padding: 0.5em;
 	margin: 0.2em;
@@ -259,7 +259,7 @@ main {
 	margin-top: 1em;
 }
 
-#previous, #next, #exercise_tab input[type = "submit"], #exercise_tab input[type="text"], .welcome_form input {
+#previous, #next, #exercise_tab input[type = "submit"], #exercise_tab input[type="text"], .welcome_form input, #logout {
 	background-color: var(--color-light-blue);
 	color: var(--color-dark-purple);
 	border: 0.1rem solid rgba(102, 0, 102, 0.6);
@@ -448,7 +448,7 @@ footer input, textarea {
 		font-size: 2.3vw;
 	}
 
-	#previous, #next, #exercise_tab input[type = "submit"], .welcome_form input {
+	#previous, #next, #exercise_tab input[type = "submit"], .welcome_form input, #logout {
 		font-size: 2vw;
 	}
 
