@@ -153,6 +153,7 @@ main {
 	grid-row: 1 / 3;
 	grid-column: 1 / 2;
 	font-size: 4vw !important;
+	color: var(--color-dark-purple);
 }
 
 #signup, #login {
@@ -169,6 +170,10 @@ main {
 #login {
 	grid-row: 2 / 3;
 	grid-column: 2 / 3;
+}
+
+#logout {
+	margin-right: 1em;
 }
 
 #welcome h2 {
@@ -195,8 +200,12 @@ main {
 	font-size: 1.3vw;
 }
 
-.welcome_form  input[type="submit"], #logout {
+.welcome_form  input[type="submit"] {
 	margin: 0;
+}
+
+#exercise_tab {
+	color: var(--color-dark-blue);
 }
 
 #exercise_tab h1 {
@@ -239,7 +248,7 @@ main {
 	vertical-align: middle;
 }
 
-#previous, #next, #exercise_tab input[type = "submit"], #logout {
+.button, #exercise_tab input[type = "submit"] {
 	cursor: pointer;
 	padding: 0.5em;
 	margin: 0.2em;
@@ -259,7 +268,7 @@ main {
 	margin-top: 1em;
 }
 
-#previous, #next, #exercise_tab input[type = "submit"], #exercise_tab input[type="text"], .welcome_form input, #logout {
+.button, #exercise_tab input[type="text"], .welcome_form input {
 	background-color: var(--color-light-blue);
 	color: var(--color-dark-purple);
 	border: 0.1rem solid rgba(102, 0, 102, 0.6);
@@ -448,7 +457,7 @@ footer input, textarea {
 		font-size: 2.3vw;
 	}
 
-	#previous, #next, #exercise_tab input[type = "submit"], .welcome_form input, #logout {
+	.button, #exercise_tab input[type = "submit"], .welcome_form input {
 		font-size: 2vw;
 	}
 
