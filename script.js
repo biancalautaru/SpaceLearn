@@ -94,6 +94,8 @@ window.onload = function() {
             }
 
             function showExercise(exerciseNumber) {
+                sessionStorage.setItem("exercise", exerciseNumber);
+
                 const root = document.documentElement;
                 const colorDarkBlue = getComputedStyle(root).getPropertyValue("--color-dark-blue");
                 const colorPurple = getComputedStyle(root).getPropertyValue("--color-purple");
@@ -310,16 +312,15 @@ window.onload = function() {
                         const password = document.getElementById("password_login").value;
 
                         fetch("users.json").then(response => response.json()).then(users => {
-                            users.forEach(function(user) {
-                                if(user.username === username && user.password != password) {
-                                    alert("Username-ul sau parola sunt greșite!");
-                                    return false;
-                                }
-                            });
+                            let user = users.find(user => user.username === username);
+                            if(user.password === password) {
+                                localStorage.setItem("username", JSON.stringify(username));
+                                sessionStorage.removeItem("correctAnswers");
+                                showExercise(0);
+                            }
+                            else
+                                alert("Username-ul sau parola sunt greșite!");
                         });
-                        localStorage.setItem("username", JSON.stringify(username));
-                        sessionStorage.removeItem("correctAnswers");
-                        showExercise(0);
                     });
                 }
             }
@@ -337,8 +338,25 @@ window.onload = function() {
                 return score;
             }
 
+            function keys() {
+                if (document.getElementById("title"))
+                    sessionStorage.removeItem("exercise");
+
+                document.addEventListener("keydown", function(event) {
+                    let exerciseNumber = sessionStorage.getItem("exercise");
+                    if (exerciseNumber) {
+                        exerciseNumber = parseInt(exerciseNumber);
+                        if (event.key == "ArrowLeft" && exerciseNumber != 0)
+                            showExercise(exerciseNumber - 1);
+                        if (event.key == "ArrowRight" && exerciseNumber != exercises.length - 1)
+                            showExercise(exerciseNumber + 1);
+                    }
+                });
+            }
+
             signupFormCheck();
             loginFormCheck();
+            keys();
         });
     }
 
