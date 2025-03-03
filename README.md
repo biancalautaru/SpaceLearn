@@ -1,4 +1,4 @@
-*Punctaj: 30/30*
+***Punctaj: 30/30***
 
 # Proiect laborator
  
