@@ -1,3 +1,5 @@
+*Punctaj: 30/30*
+
 # Proiect laborator
  
 Pentru componenta de proiect a cursului, fiecare student trebuie să dezvolte un website.  
